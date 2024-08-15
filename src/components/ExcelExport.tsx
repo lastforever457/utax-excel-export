@@ -12,7 +12,7 @@ const ExcelExport = ({id, filename, buttonText}: { id: string, filename: string,
             const wb = XLSX.utils.book_new();
             XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
             const wbout = XLSX.write(wb, {bookType: 'xlsx', type: 'array'});
-            saveAs(new Blob([wbout], {type: 'application/octet-stream'}), filename);
+            saveAs(new Blob([wbout], {type: 'application/octet-stream'}), `${filename}.xlsx`);
         }
     };
 
